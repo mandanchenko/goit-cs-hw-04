@@ -5,12 +5,12 @@ from threading import Thread
 folders = []
 
 
-def search_keywords_in_file(keywords, file_name):
+def search_keywords_in_file(keywords_list, file_name):
     try:
-        with open(file_name, "r", encoding="utf-8") as file:
-            lines = file.readlines()
+        with open(file_name, "r", encoding="utf-8") as f:
+            lines = f.readlines()
             for line_number, line in enumerate(lines, 1):
-                for keyword in keywords:
+                for keyword in keywords_list:
                     if keyword in line:
                         print(
                             f"Знайдено '{keyword}' у файлі '{file_name}' на рядку {line_number}"
@@ -25,13 +25,13 @@ def search_keywords_in_file(keywords, file_name):
 
 
 def get_files(path: Path):
-    files = []
+    input_files = []
     for item in path.iterdir():
         if item.is_file():
-            files.append(item)
+            input_files.append(item)
         elif item.is_dir():
-            files.extend(get_files(item))
-    return files
+            input_files.extend(get_files(item))
+    return input_files
 
 
 if __name__ == "__main__":
