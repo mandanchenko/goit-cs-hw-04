@@ -2,8 +2,6 @@ import logging
 from pathlib import Path
 from threading import Thread
 
-folders = []
-
 
 def search_keywords_in_file(keywords_list, file_name):
     try:
