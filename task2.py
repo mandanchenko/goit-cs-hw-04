@@ -15,11 +15,11 @@ def search_keywords_in_file(keywords_list, file_name, queue):
                         results[keyword].append(file_name)
                         break
     except FileNotFoundError:
-        print(f"Файл '{file_name}' не знайдено.")
+        logging.error(f"Файл '{file_name}' не знайдено.")
     except PermissionError as pe:
-        print(f"Відмовлено у доступі до файлу '{file_name}': {pe}")
+        logging.error(f"Відмовлено у доступі до файлу '{file_name}': {pe}")
     except Exception as e:
-        print(f"Сталася помилка під час обробки файлу '{file_name}': {e}")
+        logging.error(f"Сталася помилка під час обробки файлу '{file_name}': {e}")
     queue.put(results)
 
 
