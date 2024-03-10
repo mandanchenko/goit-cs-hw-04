@@ -43,7 +43,11 @@ def main():
     format = "%(processName)s %(asctime)s: %(message)s"
     logging.basicConfig(format=format, level=logging.INFO, datefmt="%H:%M:%S")
 
-    files = get_files(source)
+    try:
+        files = get_files(source)
+    except FileNotFoundError as e:
+        logging.error(f"Директорія '{source}' не знайдена: {e}")
+        return
 
     processes = []
     for file in files:
