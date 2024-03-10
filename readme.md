@@ -3,6 +3,7 @@
 ключові слова (одне з яких ніде не зустрічається): товар https WindowsPath \
 
 **Результати пошуку через threading:**
+
 Результати для ключового слова 'товар':
   Знайдено у файлі 'C:\Users\User\Documents\test_texts\19.04.txt
   Знайдено у файлі 'C:\Users\User\Documents\test_texts\2004.txt
