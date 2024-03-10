@@ -43,7 +43,6 @@ def main():
     logging.basicConfig(format=format, level=logging.INFO, datefmt="%H:%M:%S")
 
     files = get_files(source)
-    print(files)
 
     threads = []
     for file in files:

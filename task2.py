@@ -44,11 +44,12 @@ def main():
     logging.basicConfig(format=format, level=logging.INFO, datefmt="%H:%M:%S")
 
     files = get_files(source)
-    print(files)
 
     processes = []
     for file in files:
-        process = Process(target=search_keywords_in_file, args=(keywords, file, results_queue))
+        process = Process(
+            target=search_keywords_in_file, args=(keywords, file, results_queue)
+        )
         processes.append(process)
         process.start()
 
