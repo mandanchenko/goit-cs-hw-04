@@ -1,4 +1,5 @@
 import logging
+import timeit
 from pathlib import Path
 from threading import Thread
 
@@ -63,4 +64,6 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    execution_time = timeit.timeit(main, number=1)
+
+    print("Час виконання:", execution_time)
